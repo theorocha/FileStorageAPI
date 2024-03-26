@@ -1,9 +1,7 @@
 package com.implementation.FileDatabase.file;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
@@ -13,8 +11,9 @@ import java.util.UUID;
 public class DbFile {
 
     @Id
-    @UuidGenerator
-    private UUID id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
 
     private String fileName;
 

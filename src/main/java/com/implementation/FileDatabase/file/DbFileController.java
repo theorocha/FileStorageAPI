@@ -27,7 +27,7 @@ public class DbFileController {
     //Download By Id;
     @GetMapping("/downloadFile/{fileId:.+}")
     @Operation(summary = "Realiza download de um arquivo pelo Id.")
-    public ResponseEntity<Resource> downloadFileById(@PathVariable UUID fileId, HttpServletRequest request) {
+    public ResponseEntity<Resource> downloadFileById(@PathVariable String fileId, HttpServletRequest request) {
         // Load file as Resource
         DbFile databaseFile = dbFileService.getFile(fileId);
 
