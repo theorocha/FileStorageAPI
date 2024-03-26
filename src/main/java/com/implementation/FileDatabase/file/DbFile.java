@@ -32,7 +32,7 @@ public class DbFile {
         this.data = data;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
@@ -48,7 +48,7 @@ public class DbFile {
         return data;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
