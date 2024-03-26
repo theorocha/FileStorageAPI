@@ -14,7 +14,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -45,12 +44,13 @@ public class DbFileController {
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
-                .path(fileName.getFileName())
+                .path(fileName.getId())
                 .toUriString();
 
         return new DbFileResponse(fileName.getFileName(), fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
+
 
     //Post Multiple Files;
     @PostMapping("/uploadMultipleFiles")
